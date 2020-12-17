@@ -1,11 +1,10 @@
 // file for creating animation, don't worry about the math just yet
 
 // libraries
-#include <GL/glut.h>
+#include </usr/include/GL/glut.h>
 
 // set up OpenGL
-void initialize(int argc, char **argv){
-	glutInit(&argc, argv);
+void set_window(void){
 //	glutInitWindowPosition(int x, int y);
 //	glutInitWindowSize(int width, int height)
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); // default color mode | double buffer window | depth buffer
@@ -13,9 +12,12 @@ void initialize(int argc, char **argv){
 }
 
 // program terminates when last statement in main executed
-int main(int argc, char **argv){
+int main(int argc, char *argv[]){
 
-	initialize(argc, argv);
+	glutInit(&argc, argv);
+	set_window();
 
-	return 1;
+	glutMainLoop();
+	// execution never reaches this point
+	return 0;
 }
