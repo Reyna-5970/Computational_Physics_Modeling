@@ -1,2 +1,13 @@
 ***PLANNING DOCUMENT***
 
+represent airplane using airfoil for wing
+
+2 parts: 
+	a) launch
+		i. obtain target height with PID
+		ii. simulate sensor feedback
+		iii. produce x(t), v(t), L(t) graphs from flight path
+	b) lander sim
+		i. report success (crash? Y/n)
+		ii. in the case of a crash, which parts failed?
+		iii. account for atmos. conditions for specified planet

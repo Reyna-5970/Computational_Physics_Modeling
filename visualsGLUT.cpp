@@ -3,6 +3,10 @@
 // libraries
 // #include <stdlib>
 #include <GL/glut.h>
+#include <iostream>
+
+// global vars
+float angle = 0.0f;
 
 // set up OpenGL
 void set_window(int x, int y, int width, int height) {
@@ -12,9 +16,20 @@ void set_window(int x, int y, int width, int height) {
 	glutCreateWindow("Flight Trajectory");
 }
 
-void display(void) {
+void render(void) {
+	// clear color and depth buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
+	// reset transformations
+	glLoadIdentity();
+	// set the camera
+	gluLookAt(	0.0f, 0.0f, 10.0f,
+				0.0f, 0.0f, 0.0f,
+				0.0f, 1.0f, 0.0f);
+	glRotatef(angle, 0.0f, 1.0f, 0.0f);
+	
+	// polygon in question
+	// (x, y, z) where x and y init in bottom left & z is depth
 	glBegin(GL_POLYGON);
 		glVertex3f(-2, -2, -5.0);
 		glVertex3f(2, 0.0, -5.0);
@@ -22,6 +37,10 @@ void display(void) {
 	glEnd();
 	glFlush();
 
+	// angle change --> animation
+	angle += 0.1f;
+
+	// cause front & back buffers to switch (showing what was previously drawn in other buffer)
 	glutSwapBuffers();
 }
 
@@ -47,6 +66,14 @@ void change_size(int w, int h) {
 	glMatrixMode(GL_MODELVIEW);
 }
 
+void keyboard(unsigned char c, int x, int y) {
+	// enter keyboard commands
+}
+
+void mouse(int button, int state, int x, int y) {
+	// enter mouse commands
+}
+
 // program terminates when last statement in main executed
 int main(int argc, char *argv[]) {
 	
@@ -55,8 +82,13 @@ int main(int argc, char *argv[]) {
 	set_window(100, 100, 650, 480);
 
 	// register callbacks
-	glutDisplayFunc(display);
+	glutDisplayFunc(render);
 	glutReshapeFunc(change_size);
+	glutKeyboardFunc(keyboard);
+	glutMouseFunc(mouse);
+
+	// when application is idle, call render function
+	glutIdleFunc(render);
 
 	// enter GLUT event processing loop
 	glutMainLoop();
