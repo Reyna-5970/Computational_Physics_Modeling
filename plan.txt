@@ -12,3 +12,5 @@ represent airplane using airfoil for wing
 		i. report success (crash? Y/n)
 		ii. in the case of a crash, which parts failed?
 		iii. account for atmos. conditions for specified planet
+
+--> embed animation into github.io hosted website
