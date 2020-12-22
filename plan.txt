@@ -7,7 +7,7 @@ represent airplane using airfoil for wing
 		i. obtain target height with PID
 		ii. simulate sensor feedback
 		iii. produce x(t), v(t), L(t) graphs from flight path
-		iv. use bernoulli's for lift (temporarily...)
+		iv. use bernoulli's for lift (temporarily...) --> sad reyna because incorrectly applying to two different streamlines :(
 	b) lander sim
 		i. report success (crash? Y/n)
 		ii. in the case of a crash, which parts failed?
