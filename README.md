@@ -1,2 +1,5 @@
 # Computational_Physics_Modeling
-# Enter "./executable_file" in command prompt to run program
+#
+# Compile changes command: g++ file.cpp -o file -libs
+#
+# Run command: ./makefile
