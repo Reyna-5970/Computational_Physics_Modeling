@@ -4,12 +4,11 @@
 #include <GL/glut.h>
 // #include <iostream> // comment out later, will include in main.cpp
 
-using namespace std;
-
 class Flight_Visuals {
 
 	// global vars
 	float angle = 0.0f;
+	float PI = 3.14159;
 
 	// set up OpenGL 
 	void set_window(int x, int y, int width, int height) {
@@ -22,7 +21,7 @@ class Flight_Visuals {
 
 	void render(void) {
 		//clear color
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// reset transformations (overwrite with identity matrix)
 		glLoadIdentity();
