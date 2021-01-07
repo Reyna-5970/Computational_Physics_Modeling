@@ -1,3 +1,6 @@
+#ifndef FLIGHT_VISUALS
+#define FLIGHT_VISUALS
+
 // libraries
 // #include <stdlib.h> // comment out later, will include in main.cpp
 // #include <stdio.h> // comment out later, will include in main.cpp
@@ -112,3 +115,5 @@ class Flight_Visuals {
 	}
 
 }; // obj names before ;
+
+#endif
