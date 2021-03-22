@@ -100,13 +100,13 @@ class Flight_Visuals {
 			glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 			// register callbacks
-			glutDisplayFunc(render);
-			glutReshapeFunc(change_size);
-			glutKeyboardFunc(keyboard);
-			glutMouseFunc(mouse);
+			glutDisplayFunc(render());
+			glutReshapeFunc(change_size());
+			glutKeyboardFunc(keyboard());
+			glutMouseFunc(mouse());
 
 			// when application is idle, call render method
-			glutIdleFunc(render);
+			glutIdleFunc(render());
 
 			// enter GLUT event processing loop
 			glutMainLoop();

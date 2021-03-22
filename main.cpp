@@ -12,5 +12,6 @@ int main(void) {
 	// instantiate classes
 	Flight_Visuals flight_visuals;
 
-	flight_visuals.run;
+	// run
+	flight_visuals.run();
 }
