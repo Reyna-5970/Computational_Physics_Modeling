@@ -5,13 +5,13 @@
 #include <math.h>
 
 // custom header files
-#include "flight_visuals.h"
+#include "animation.h"
 
 int main(void) {
 
 	// instantiate classes
-	Flight_Visuals flight_visuals;
+	Animation animated_flight;
 
 	// run
-	flight_visuals.run();
+	animated_flight.run();
 }
