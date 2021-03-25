@@ -1,7 +1,7 @@
 #ifndef ANIMATION
 #define ANIMATION
 
-class Animation {
+/** class Animation {
 
 	// constants
 	const static float window_angle = 0.0f;
@@ -9,11 +9,11 @@ class Animation {
 
 	public:
 		void set_window(int x, int y, int width, int height);
-		void render();
+		void render(void);
 		void change_size(int w, int h);
 		void keyboard(unsigned char c, int x, int y);
 		void mouse(int button, int state, int x, int y);
-		int run(int argc, char *argv[]);
+		int main(int argc, char **argv);
 };
-
+**/
 #endif

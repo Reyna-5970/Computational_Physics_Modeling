@@ -1,18 +1,17 @@
 // libraries
-#include <GL/glut.h>
-#include <math.h> //comment out when oop
 #include <stdlib.h>
 #include <stdio.h>
+#include <GL/glut.h>
+#include <math.h> //comment out when oop
 #include <iostream>
-
-// local files
-#include "animation.h"
 
 // global vars
 float angle = 0.0f;
+int width = 480;
+int height = 480;
 
 // set up OpenGL 
-void set_window(int x, int y, int width, int height) {
+void set_window(int x, int y, int w, int h) {
 	glutInitWindowPosition(x, y);
 	glutInitWindowSize(width, height);
 	// RGBA where A is alpha (opacity). instead, RGB used (use glColor3f which takes in 3 args as RGB values)
@@ -20,7 +19,7 @@ void set_window(int x, int y, int width, int height) {
 	glutCreateWindow("Flight Trajectory");
 }
 
-void render() {
+void render(void) {
 	// clear color
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -52,7 +51,7 @@ void render() {
 	glutSwapBuffers();
 }
 
-void change_size(int w, int h) {
+void change_size(int w = width, int h = height) {
 	
 	// prevent division by 0 when window is too short
 	if (h == 0) {
@@ -94,7 +93,7 @@ int main(int argc, char *argv[]) {
 		fprintf(stderr, "Failed to initialize GLUT");
 		return -1;
 	}
-	set_window(100, 100, 480, 480);
+	set_window(100, 100, width, height);
 
 	// gluOrtho2D( left, right, bottom, top) <<<< mapping (it's an orthogonal projection matrix!)
 	// R2 space --> R2 space on plane where z = -1
