@@ -6,6 +6,7 @@
 #include <iostream>
 
 // custom header files
+#include "visual_set_up.h"
 
 // global vars
 float angle = 0.0f;
@@ -16,7 +17,7 @@ float PI = 3.14159;
 
 // ANIMATION METHODS ---------------------------------
 
-// set up OpenGL 
+/** 
 void set_window(int x, int y, int w, int h) {
 	glutInitWindowPosition(x, y);
 	glutInitWindowSize(width, height);
@@ -24,6 +25,7 @@ void set_window(int x, int y, int w, int h) {
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); //default color mode | [or operator] double buffer window | depth buffer
 	glutCreateWindow("Flight Trajectory");
 }
+**/
 
 void render(void) {
 	// clear color
@@ -98,6 +100,7 @@ void mouse(int button, int state, int x, int y) {
 int main(int argc, char *argv[]) {
 
 	// instantiate classes
+	Visual_Set_Up visual_set_up;
 
 	// vars
 
@@ -108,7 +111,7 @@ int main(int argc, char *argv[]) {
 		fprintf(stderr, "Failed to initialize GLUT");
 		return -1;
 	}
-	set_window(100, 100, width, height);
+	visual_set_up.set_window(100, 100, width, height);
 
 	// gluOrtho2D( left, right, bottom, top) <<<< mapping (it's an orthogonal projection matrix!)
 	// R2 space --> R2 space on plane where z = -1
